@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmo Genetico | Joaia</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <main class="joaia-app">
+        <section class="page-header">
+            <span class="small-label">Practica de IA</span>
+            <h1>Algoritmo Genetico</h1>
+            <p>Realizado por Joaquin</p>
+        </section>
+
+        <section class="calculator" aria-label="Calculadora de algoritmo genetico">
+            <form class="input-panel" onsubmit="event.preventDefault(); calularCruce();">
+                <div class="panel-heading">
+                    <h2>Datos de entrada</h2>
+                    <span>cromosomas binarios</span>
+                </div>
+
+                <div class="field-group">
+                    <label for="txtPadre">Padre</label>
+                    <input type="text" inputmode="numeric" pattern="[01]*" id="txtPadre" name="txtPadre"
+                        placeholder="11010101" autocomplete="off">
+                    <div class="invalid-feedback" id="feedbackPadre"></div>
+                </div>
+
+                <div class="field-group">
+                    <label for="txtMadre">Madre</label>
+                    <input type="text" inputmode="numeric" pattern="[01]*" id="txtMadre" name="txtMadre"
+                        placeholder="00111010" autocomplete="off">
+                    <div class="invalid-feedback" id="feedbackMadre"></div>
+                </div>
+
+                <div class="field-grid">
+                    <div class="field-group">
+                        <label for="txtPuntoCorte">Punto de corte</label>
+                        <input type="number" min="1" step="1" id="txtPuntoCorte" name="txtPuntoCorte" placeholder="4">
+                        <div class="invalid-feedback" id="feedbackPunto"></div>
+                    </div>
+
+                    <p class="hint-box">Ambos cromosomas deben tener la misma cantidad de bits.</p>
+                </div>
+
+                <div class="button-row">
+                    <button class="primary-action" type="submit">Calcular</button>
+                    <button class="ghost-action" type="button" onclick="reiniciarCalculo()">Nuevo</button>
+                </div>
+            </form>
+
+            <section class="result-panel" aria-live="polite">
+                <div class="panel-heading compact">
+                    <h2>Resultado</h2>
+                    <span>cruce y fitness</span>
+                </div>
+
+                <div id="lblResultado" class="result-surface">
+                    <div class="empty-state">
+                        <span class="empty-mark">01</span>
+                        <h3>Esperando datos</h3>
+                        <p>Completa los campos para ver los hijos generados y su fitness.</p>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <footer class="site-footer">
+            <span>Joaia - Proyecto de Inteligencia Artificial - 2026</span>
+        </footer>
+    </main>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
